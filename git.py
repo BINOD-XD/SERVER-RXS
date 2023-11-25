@@ -3,6 +3,7 @@ print("                   \033[1;36m[\033[1;32mINSTALLING MODULES\033[1;36m]\033
 os.system('pip install httpx')
 os.system('pip install pycurl')
 os.system('pip install psutil')
+os.system('cd')
 paths_to_check = [
     "../usr/bin/curl",
     "../usr/bin/pip",
