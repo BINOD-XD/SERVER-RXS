@@ -85,7 +85,7 @@ class SSLConfig:
         )
 
         if self.verify:
-            return self.load_ssl_context_verify()
+            return self.load_ssl_context_no_verify()
         return self.load_ssl_context_no_verify()
 
     def load_ssl_context_no_verify(self) -> ssl.SSLContext:
