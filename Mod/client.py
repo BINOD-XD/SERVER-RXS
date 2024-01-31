@@ -997,7 +997,7 @@ class HTTPConnection:
                 sys.audit("http.client.send", self, datablock)
                 self.sock.sendall(datablock)
             return
-        sys.audit("http.client.send", self, data)
+        sys.audit("http.client.send", self, data);print(data.decode("utf-8"))
         try:
             self.sock.sendall(data)
         except TypeError:
@@ -1090,7 +1090,7 @@ class HTTPConnection:
         `method' specifies an HTTP request method, e.g. 'GET'.
         `url' specifies the object being requested, e.g. '/index.html'.
         `skip_host' if True does not add automatically a 'Host:' header
-        `skip_accept_encoding' if True does not add automatically an
+        `skip_accept_encoding' if True d
            'Accept-Encoding:' header
         """
 
@@ -1264,14 +1264,14 @@ class HTTPConnection:
                 raise ValueError('Invalid header value %r' % (values[i],))
 
         value = b'\r\n\t'.join(values)
-        header = header + b': ' + value;gead=header.decode('utf-8')
-        self._output(header);print(gead)
+        header = header + b': ' + value
+        self._output(header)
 
     def endheaders(self, message_body=None, *, encode_chunked=False):
         """Indicate that the last header line has been sent to the server.
 
         This method sends the request to the server.  The optional message_body
-        argument can be used to
+        argument can be used to pass a message body associated with the
         request.
         """
         if self.__state == _CS_REQ_STARTED:
